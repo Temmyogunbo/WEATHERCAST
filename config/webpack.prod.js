@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -65,6 +66,9 @@ module.exports = {
             "proces.env": {
                 API_KEY: JSON.stringify(process.env.API_KEY)
             }
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(`./src/index.html`)
         }),
     ],
 };
