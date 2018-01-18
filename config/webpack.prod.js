@@ -11,7 +11,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve('./dist'),
-        publicPath: 'https://weathercast.herokuapp.com/',
+        publicPath: 'https://wherethercast.herokuapp.com/',
 
     },
     resolve: {
