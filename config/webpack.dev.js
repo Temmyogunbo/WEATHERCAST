@@ -4,9 +4,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('postcss-cssnext');
 const postcssConfig = path.resolve(process.cwd(), './postcss.config.js');
-const dotEnvWebpack = require('dotenv-webpack');
+const dotEnv = require('dotenv');
 
-
+dotEnv.config();
 const port = parseInt(process.env.PORT, 10) || 5000;
 
 const config = {
@@ -74,12 +74,8 @@ const config = {
   plugins: [
     new ExtractTextPlugin('./style.css'),
     new webpack.HotModuleReplacementPlugin(),
-    new dotEnvWebpack({
-      path: './.env',
-      safe: false,
-    }),
     new webpack.DefinePlugin({
-      "proces.env": {
+      "process.env": {
         API_KEY: JSON.stringify(process.env.API_KEY)
         }
     }),

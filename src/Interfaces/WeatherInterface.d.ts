@@ -1,24 +1,10 @@
-import * as types from '../types';
+import { LOAD_WEATHER_REPORT } from '../types';
 
 export interface IWeatherState {
-  city: string,
+  city: string;
 } 
 
-export interface  IweatherProps{
-    main: {
-      temp: number;
-      pressure: number;
-      humidity: number;
-    };
-    coord: {
-      long: number;
-      lat: number
-    };
-    weatherReportAction: (cityName: IWeatherState) => any;
-
-}
-
-export interface IweatherReport {
+export interface  IWeatherProps{
   main: {
     temp: number;
     pressure: number;
@@ -26,11 +12,25 @@ export interface IweatherReport {
   };
   coord: {
     long: number;
-    lat: number
+    lat: number;
+  };
+    dispatch?: (x: any) => void;
+
+}
+
+export interface IWeatherReport {
+  main: {
+    temp: number;
+    pressure: number;
+    humidity: number;
+  };
+  coord: {
+    long: number;
+    lat: number;
   };
 }
 
-export interface IweatherAction {
-  type: types.LOAD_WEATHER_REPORT;
-  weatherReport: IweatherReport;
+export interface IWeatherActionCreator {
+  type: LOAD_WEATHER_REPORT;
+  weatherReport: IWeatherReport;
 }

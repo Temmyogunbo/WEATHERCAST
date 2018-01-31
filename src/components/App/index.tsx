@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import WeatherContainer from '../weatherComponent/WeatherContainer';
+import WeatherContainer from '../weatherComponent/WeatherComponent';
 import configureStore from '../../store';
 
 const store = configureStore({});

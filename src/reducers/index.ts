@@ -1,10 +1,9 @@
 import * as types from '../types';
 import { LOAD_WEATHER_REPORT } from '../types';
 import { IStoreState } from '../Interfaces/StoreInterface';
-import { IweatherAction } from '../Interfaces/WeatherInterface';
+import { IWeatherActionCreator } from '../Interfaces/WeatherInterface';
 
-export const appReducer = (state: IStoreState, action: IweatherAction): IStoreState => {
-  console.log(action.weatherReport);
+export const appReducer = (state: IStoreState, action: IWeatherActionCreator) => {
 
   switch (action.type) {
     case LOAD_WEATHER_REPORT :

@@ -1,11 +1,11 @@
 export interface IStoreState {
   main: {
-    temp: number,
-    pressure: number,
-    humidity: number,
+    temp: number;
+    pressure: number;
+    humidity: number;
   },
   coord: {
-    lat: number,
-    long: number,
+    lat: number;
+    long: number;
   }
 }

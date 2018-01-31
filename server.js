@@ -18,5 +18,5 @@ app.use('*', (request, response) => {
 });
 
 app.listen(port, error => 
-    error ? logger(error) : console.log(chalk.green(`App running on port ${port}`))
+    error ? logger(error) : console.log(chalk.blue(`App running on port ${port}`))
 );

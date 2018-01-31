@@ -3,7 +3,14 @@
   "rules": {
     "no-constant-condition": true,
     "quotemark": [true, "single", "jsx-double"],
-    "semicolon": [true, "always"]
+    "semicolon": [true, "always"],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ]
   }
 }
 

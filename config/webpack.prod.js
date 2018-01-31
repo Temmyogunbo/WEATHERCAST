@@ -3,7 +3,9 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const dotEnv = require('dotenv');
 
+dotEnv.config();
 module.exports = {
     entry: [
         './src/index.tsx'
@@ -19,7 +21,6 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js', '.json',],
     },
     module: {
-
         rules: [
             {
                 test: /\.tsx?$/,
@@ -63,7 +64,7 @@ module.exports = {
             sourceMap: true
         }),
         new webpack.DefinePlugin({
-            "proces.env": {
+            "process.env": {
                 API_KEY: JSON.stringify(process.env.API_KEY)
             }
         }),
